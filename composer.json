@@ -19,10 +19,18 @@
             "homepage": "http://www.spiffyjr.me/"
         }
     ],
+        "repositories": [
+     
+        {
+            "type": "vcs",
+            "url": "https://github.com/matwright/DoctrineMongoODMModule"
+
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
          "laminas-commons/laminas-user": "dev-master"  ,
-        "doctrine/doctrine-mongo-odm-module": "~2.0"
+        "doctrine/doctrine-mongo-odm-module": "dev-debug-fix"
     },
     "minimum-stability": "dev",
 
