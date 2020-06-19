@@ -25,11 +25,7 @@
         "doctrine/doctrine-mongo-odm-module": "~2.0"
     },
     "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        }
-    },
+
     "autoload": {
         "psr-0": {
             "ZfcUserDoctrineMongoODM": "src/"
