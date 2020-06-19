@@ -2,7 +2,7 @@
 
 namespace ZfcUserDoctrineMongoODM\Options;
 
-use ZfcUser\Options\ModuleOptions as BaseModuleOptions;
+use LaminasUser\Options\ModuleOptions as BaseModuleOptions;
 
 class ModuleOptions extends BaseModuleOptions
 {
