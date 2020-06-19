@@ -11,12 +11,12 @@ class UserMongoDB implements \LaminasUser\Mapper\UserInterface
      * @var \Doctrine\ODM\DocumentManager
      */
     protected $dm;
-    
+
     /**
      * @var \ZfcUserDoctrineMongoODM\Options\ModuleOptions
      */
     protected $options;
-    
+
     public function __construct(DocumentManager $dm, ModuleOptions $options)
     {
         $this->dm      = $dm;
@@ -38,7 +38,7 @@ class UserMongoDB implements \LaminasUser\Mapper\UserInterface
         $user = $dm->getRepository($class)->findOneBy(array('username' => $username));
         return $user;
     }
-    
+
     public function findById($id)
     {
         $dm = $this->getDocumentManager();
@@ -60,26 +60,26 @@ class UserMongoDB implements \LaminasUser\Mapper\UserInterface
 
     public function getUserRepository()
     {
-    	$class = LaminasUserUser::getOption('user_entity_class');
+        $class = LaminasUserUser::getOption('user_entity_class');
         return $this->getDocumentManager()->getRepository($class);
     }
-    
+
     public function persist($document)
     {
         $dm = $this->getDocumentManager();
         $dm->persist($document);
         $dm->flush();
     }
-    
-    public function insert(\LaminasUserUser\Entity\UserInterface $user)
+
+    public function insert(\LaminasUser\Entity\UserInterface $user)
     {
         $this->dm->persist($user);
         $this->dm->flush();
     }
 
-    public function update(\LaminasUserUser\Entity\UserInterface $user)
+    public function update(\LaminasUser\Entity\UserInterface $user)
     {
-       
+
 
         $this->dm->persist($user);
         $this->dm->flush();
