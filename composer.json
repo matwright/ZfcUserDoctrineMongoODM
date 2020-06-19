@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-         "laminas-commons/laminas-user": "^3.0"  ,
+         "laminas-commons/laminas-user": "dev-master"  ,
         "doctrine/doctrine-mongo-odm-module": "~2.0"
     },
     "minimum-stability": "dev",
