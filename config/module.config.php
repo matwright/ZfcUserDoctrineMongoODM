@@ -4,7 +4,7 @@ return array(
         'driver' => array(
             'zfcuser_document' => array(
                 'class' => 'Doctrine\ODM\MongoDB\Mapping\Driver\XmlDriver',
-                'paths' => __DIR__ . '/xml'
+                'paths' => [__DIR__ . '/xml']
             ),
 
             'odm_default' => array(
