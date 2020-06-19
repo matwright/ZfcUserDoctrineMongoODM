@@ -5,7 +5,7 @@ namespace ZfcUserDoctrineMongoODM\Mapper;
 use Doctrine\ODM\MongoDB\DocumentManager,
     ZfcUserDoctrineMongoODM\Options\ModuleOptions;
 
-class UserMongoDB implements \ZfcUser\Mapper\UserInterface
+class UserMongoDB implements \LaminasUserUser\Mapper\UserInterface
 {
     /**
      * @var \Doctrine\ODM\DocumentManager
@@ -60,7 +60,7 @@ class UserMongoDB implements \ZfcUser\Mapper\UserInterface
 
     public function getUserRepository()
     {
-    	$class = ZfcUser::getOption('user_entity_class');
+    	$class = LaminasUserUser::getOption('user_entity_class');
         return $this->getDocumentManager()->getRepository($class);
     }
     
@@ -71,13 +71,13 @@ class UserMongoDB implements \ZfcUser\Mapper\UserInterface
         $dm->flush();
     }
     
-    public function insert(\ZfcUser\Entity\UserInterface $user)
+    public function insert(\LaminasUserUser\Entity\UserInterface $user)
     {
         $this->dm->persist($user);
         $this->dm->flush();
     }
 
-    public function update(\ZfcUser\Entity\UserInterface $user)
+    public function update(\LaminasUserUser\Entity\UserInterface $user)
     {
        
 
