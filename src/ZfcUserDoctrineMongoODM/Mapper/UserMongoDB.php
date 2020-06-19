@@ -5,7 +5,7 @@ namespace ZfcUserDoctrineMongoODM\Mapper;
 use Doctrine\ODM\MongoDB\DocumentManager,
     ZfcUserDoctrineMongoODM\Options\ModuleOptions;
 
-class UserMongoDB implements \LaminasUserUser\Mapper\UserInterface
+class UserMongoDB implements \LaminasUser\Mapper\UserInterface
 {
     /**
      * @var \Doctrine\ODM\DocumentManager
