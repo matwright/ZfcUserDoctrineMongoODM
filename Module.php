@@ -33,7 +33,7 @@ class Module
     {
         return array(
             'aliases' => array(
-                'zfcuser_doctrine_dm' => 'doctrine.documentmanager.odm_default',
+                'zfcuser_doctrine_odm' => 'doctrine.documentmanager.odm_default',
 
             ),
             'factories' => array(
@@ -41,9 +41,10 @@ class Module
                     $config = $sm->get('Config');
                     return new Options\ModuleOptions(isset($config['zfcuser']) ? $config['zfcuser'] : array());
                 },
-                'zfcuser_user_mapper' => function ($sm) {
+                'laminasuser_user_mapper' => function ($sm) {
+
                     return new \ZfcUserDoctrineMongoODM\Mapper\UserMongoDB(
-                        $sm->get('zfcuser_doctrine_dm'),
+                        $sm->get('zfcuser_doctrine_odm'),
                         $sm->get('zfcuser_module_options')
                     );
                 },
